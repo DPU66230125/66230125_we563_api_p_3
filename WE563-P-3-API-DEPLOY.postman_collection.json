@@ -1,0 +1,291 @@
+{
+	"info": {
+		"_postman_id": "f166fc91-276c-492e-844b-d6378381db61",
+		"name": "WE563-P-3-API-DEPLOY",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3694590"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"Supachai\",\n    \"password\": \"supachai1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://54.175.155.216/api/p-3/auth.php?method=login",
+					"protocol": "http",
+					"host": [
+						"54",
+						"175",
+						"155",
+						"216"
+					],
+					"path": [
+						"api",
+						"p-3",
+						"auth.php"
+					],
+					"query": [
+						{
+							"key": "method",
+							"value": "login"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "available-items",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://54.175.155.216/api/p-3/borrow.php?method=available-items",
+					"protocol": "http",
+					"host": [
+						"54",
+						"175",
+						"155",
+						"216"
+					],
+					"path": [
+						"api",
+						"p-3",
+						"borrow.php"
+					],
+					"query": [
+						{
+							"key": "method",
+							"value": "available-items"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "borrow-item",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"item_id\": \"3\",\n    \"user_id\": \"1\",\n    \"qty\": 1,\n    \"borrow_date\" : \"2024-06-08\",\n    \"return_date\": \"2024-06-10\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://54.175.155.216/api/p-3/borrow.php?method=borrow-item",
+					"protocol": "http",
+					"host": [
+						"54",
+						"175",
+						"155",
+						"216"
+					],
+					"path": [
+						"api",
+						"p-3",
+						"borrow.php"
+					],
+					"query": [
+						{
+							"key": "method",
+							"value": "borrow-item"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "return-item",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"record_id\": \"1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://54.175.155.216/api/p-3/borrow.php?method=return-item",
+					"protocol": "http",
+					"host": [
+						"54",
+						"175",
+						"155",
+						"216"
+					],
+					"path": [
+						"api",
+						"p-3",
+						"borrow.php"
+					],
+					"query": [
+						{
+							"key": "method",
+							"value": "return-item"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "my-records",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://54.175.155.216/api/p-3/borrow.php?method=my-records&user_id=1",
+					"protocol": "http",
+					"host": [
+						"54",
+						"175",
+						"155",
+						"216"
+					],
+					"path": [
+						"api",
+						"p-3",
+						"borrow.php"
+					],
+					"query": [
+						{
+							"key": "method",
+							"value": "my-records"
+						},
+						{
+							"key": "user_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "archives",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://54.175.155.216/api/p-3/borrow.php?method=archives",
+					"protocol": "http",
+					"host": [
+						"54",
+						"175",
+						"155",
+						"216"
+					],
+					"path": [
+						"api",
+						"p-3",
+						"borrow.php"
+					],
+					"query": [
+						{
+							"key": "method",
+							"value": "archives"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add-item",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"แผ่นรองเมาส์\",\n    \"image\": \"https://pim-cdn0.ofm.co.th/products/large/4111031.jpg\",\n    \"stock_qty\": 30\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://54.175.155.216/api/p-3/borrow.php?method=add-item",
+					"protocol": "http",
+					"host": [
+						"54",
+						"175",
+						"155",
+						"216"
+					],
+					"path": [
+						"api",
+						"p-3",
+						"borrow.php"
+					],
+					"query": [
+						{
+							"key": "method",
+							"value": "add-item"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-item",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"ID\": \"5\",\n    \"name\": \"แผ่นรองเมาส์ สีดำ\",\n    \"image\": \"https://pim-cdn0.ofm.co.th/products/large/4111031.jpg\",\n    \"stock_qty\": 24\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://54.175.155.216/api/p-3/borrow.php?method=update-item",
+					"protocol": "http",
+					"host": [
+						"54",
+						"175",
+						"155",
+						"216"
+					],
+					"path": [
+						"api",
+						"p-3",
+						"borrow.php"
+					],
+					"query": [
+						{
+							"key": "method",
+							"value": "update-item"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
