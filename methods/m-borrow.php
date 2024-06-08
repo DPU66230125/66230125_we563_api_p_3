@@ -207,7 +207,7 @@ function createArchive($conn, $body)
 }
 
 function myRecords($conn, $user_id){
-    $sql = "SELECT * FROM `records` WHERE `user_id`=$user_id";
+    $sql = "SELECT records.*, items.name, items.image FROM `records` INNER JOIN `items` ON records.item_id=items.ID WHERE `user_id`=$user_id";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -225,7 +225,7 @@ function myRecords($conn, $user_id){
 
 function getArchives($conn)
 {
-    $sql = "SELECT archives.*, users.username FROM `archives` INNER JOIN `users` ON archives.user_id=users.ID";
+    $sql = "SELECT archives.*, items.name, items.image, users.username FROM `archives` INNER JOIN `items` ON archives.item_id=items.ID INNER JOIN `users` ON archives.user_id=users.ID";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
