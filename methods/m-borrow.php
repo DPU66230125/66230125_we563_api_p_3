@@ -89,7 +89,7 @@ function borrowItem($conn, $body)
     $res1 = getItem($conn, $item_id);
     if ($res1->success) {
         $item = $res1->data;
-        if ($item->stock_qty > $qty) {
+        if ($item->stock_qty >= $qty) {
             //OK
             $item->stock_qty = $item->stock_qty - $qty;
             updateItem($conn, (array)$item);
